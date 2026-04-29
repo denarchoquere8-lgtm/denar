@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulcinea | Poleras con Tradición</title>
+    <!-- Tailwind CSS para un diseño moderno y rápido -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons para iconografía elegante -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+        
+        :root {
+            --tradicion-crema: #FDFBF7;
+            --tradicion-ocre: #B8860B;
+            --tradicion-negro: #1A1A1A;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--tradicion-crema);
+            color: var(--tradicion-negro);
+            scroll-behavior: smooth;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--tradicion-ocre);
+            box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.1);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="serif text-2xl tracking-tighter text-[var(--tradicion-ocre)]">DULCINEA</h1>
+            <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+                <a href="#inicio" class="hover:text-[var(--tradicion-ocre)] transition">Inicio</a>
+                <a href="#productos" class="hover:text-[var(--tradicion-ocre)] transition">Colección</a>
+                <a href="#tradicion" class="hover:text-[var(--tradicion-ocre)] transition">Nuestra Historia</a>
+                <a href="#contacto" class="hover:text-[var(--tradicion-ocre)] transition">Contacto</a>
+            </div>
+            <a href="#contacto" 
+               class="bg-[var(--tradicion-negro)] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[var(--tradicion-ocre)] transition">
+                Hacer Pedido
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center pt-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black/20 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80" 
+                 alt="Polera de alta calidad" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-20 text-center px-6">
+            <span class="text-white uppercase tracking-[0.3em] text-sm mb-4 block">Modernidad y Herencia</span>
+            <h2 class="serif text-6xl md:text-8xl text-white mb-6">Dulcinea</h2>
+            <p class="text-white/90 max-w-xl mx-auto text-lg mb-8 font-light">
+                Poleras que cuentan una historia. Diseños únicos donde la tradición se encuentra con el estilo contemporáneo.
+            </p>
+            <a href="#productos" class="inline-block bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[var(--tradicion-ocre)] hover:text-white transition-all transform hover:-translate-y-1">
+                Explorar Colección
+            </a>
+        </div>
+    </section>
+
+    <!-- Galería de Productos -->
+    <section id="productos" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="text-center mb-16 reveal">
+            <h3 class="serif text-4xl mb-4">Nuestra Colección</h3>
+            <div class="w-20 h-1 bg-[var(--tradicion-ocre)] mx-auto mb-6"></div>
+            <p class="text-stone-500">Calidad premium en cada hilo, diseño inspirado en nuestras raíces.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Producto 1 -->
+            <div class="product-card reveal">
+                <div class="overflow-hidden rounded-2xl aspect-[3/4] mb-6 bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80" 
+                         alt="Modelo Polera Tradición" class="product-image w-full h-full object-cover transition duration-700">
+                </div>
+                <h4 class="serif text-xl mb-2">Polera "Esencia"</h4>
+                <p class="text-stone-500 text-sm mb-4">Algodón pima 100%, bordado artesanal de alta precisión.</p>
+                <p class="font-bold text-[var(--tradicion-ocre)]">Diseño Exclusivo</p>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card reveal">
+                <div class="overflow-hidden rounded-2xl aspect-[3/4] mb-6 bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80" 
+                         alt="Modelo Polera Moderna" class="product-image w-full h-full object-cover transition duration-700">
+                </div>
+                <h4 class="serif text-xl mb-2">Polera "Legado"</h4>
+                <p class="text-stone-500 text-sm mb-4">Corte moderno con acabados que evocan la tradición textil.</p>
+                <p class="font-bold text-[var(--tradicion-ocre)]">Diseño Exclusivo</p>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card reveal">
+                <div class="overflow-hidden rounded-2xl aspect-[3/4] mb-6 bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80" 
+                         alt="Modelo Polera Urbana" class="product-image w-full h-full object-cover transition duration-700">
+                </div>
+                <h4 class="serif text-xl mb-2">Polera "Cultura"</h4>
+                <p class="text-stone-500 text-sm mb-4">La pieza perfecta para llevar tu orgullo a diario.</p>
+                <p class="font-bold text-[var(--tradicion-ocre)]">Diseño Exclusivo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Dueño: Denar -->
+    <section id="tradicion" class="bg-stone-900 text-white py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <span class="text-[var(--tradicion-ocre)] uppercase tracking-[0.3em] text-xs font-bold mb-4 block">El Rostro detrás de la Marca</span>
+                <h3 class="serif text-5xl mb-8">Denar y la Visión de Dulcinea</h3>
+                <p class="text-stone-400 leading-relaxed mb-6">
+                    "Dulcinea no es solo una marca de ropa, es un puente. Mi objetivo es que cada persona que vista nuestras poleras sienta el peso de la tradición pero con la comodidad de la modernidad. Cada diseño es seleccionado personalmente para asegurar calidad y autenticidad."
+                </p>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-[1px] bg-[var(--tradicion-ocre)]"></div>
+                    <span class="serif italic text-xl text-stone-300">Denar, Fundador</span>
+                </div>
+            </div>
+            <div class="relative reveal">
+                <div class="absolute -inset-4 border border-[var(--tradicion-ocre)]/30 rounded-2xl"></div>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" 
+                     alt="Denar - Fundador" class="rounded-2xl w-full grayscale hover:grayscale-0 transition duration-1000 relative z-10">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-20">
+            <div class="reveal">
+                <h3 class="serif text-4xl mb-6">Hablemos de Estilo</h3>
+                <p class="text-stone-500 mb-8 leading-relaxed">
+                    ¿Tienes dudas sobre tallas, envíos o pedidos personalizados? Escríbenos y Denar te atenderá personalmente. Queremos que tu experiencia con Dulcinea sea tan única como nuestras poleras.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-[var(--tradicion-ocre)] p-3 rounded-full text-white">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold">Teléfono / WhatsApp</h5>
+                            <p class="text-stone-500">+591 62028850</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-[var(--tradicion-ocre)] p-3 rounded-full text-white">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold">Ubicación</h5>
+                            <p class="text-stone-500">Santa Cruz de la Sierra, Bolivia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-stone-100 reveal">
+                <form id="whatsappForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 uppercase tracking-widest text-stone-400">Nombre Completo</label>
+                        <input type="text" id="userName" required
+                               class="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl transition duration-200" 
+                               placeholder="Ej. Juan Pérez">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 uppercase tracking-widest text-stone-400">Correo Electrónico</label>
+                        <input type="email" id="userEmail" required
+                               class="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl transition duration-200" 
+                               placeholder="juan@ejemplo.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 uppercase tracking-widest text-stone-400">Tu Mensaje</label>
+                        <textarea id="userMessage" rows="4" required
+                                  class="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl transition duration-200" 
+                                  placeholder="¿En qué podemos ayudarte?"></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-[var(--tradicion-negro)] text-white py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-[var(--tradicion-ocre)] transition duration-300 transform active:scale-95">
+                        Enviar por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Redes Sociales -->
+    <section class="py-24 text-center bg-stone-50">
+        <h3 class="serif text-3xl mb-12">Síguenos en nuestra comunidad</h3>
+        <div class="flex justify-center space-x-8 md:space-x-16">
+            <a href="#" class="group">
+                <i data-lucide="facebook" class="w-10 h-10 mb-2 group-hover:text-[var(--tradicion-ocre)] transition"></i>
+                <span class="block text-xs uppercase tracking-widest font-bold">Facebook</span>
+            </a>
+            <a href="#" class="group">
+                <i data-lucide="instagram" class="w-10 h-10 mb-2 group-hover:text-[var(--tradicion-ocre)] transition"></i>
+                <span class="block text-xs uppercase tracking-widest font-bold">Instagram</span>
+            </a>
+            <a href="#" class="group">
+                <i data-lucide="music-2" class="w-10 h-10 mb-2 group-hover:text-[var(--tradicion-ocre)] transition"></i>
+                <span class="block text-xs uppercase tracking-widest font-bold">TikTok</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-100 py-12 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-stone-500 text-sm">
+            <p class="serif text-xl text-black mb-4 md:mb-0">DULCINEA</p>
+            <div class="text-center mb-4 md:mb-0">
+                <p>© 2024 Dulcinea y Tradición. Todos los derechos reservados.</p>
+                <p>Diseño de alta gama para personas auténticas.</p>
+            </div>
+            <div class="flex space-x-6">
+                <p>Santa Cruz, Bolivia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/59162028850?text=Hola%20Denar,%20vengo%20de%20la%20web%20y%20quiero%20ver%20el%20catálogo%20de%20Dulcinea" 
+       target="_blank"
+       class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-[100] group">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+        <span class="absolute right-full mr-4 bg-white text-black px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md">
+            ¡Escríbenos ahora!
+        </span>
+    </a>
+
+    <script>
+        // Inicializar Iconos
+        lucide.createIcons();
+
+        // Efecto de scroll para revelar secciones
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        window.onload = reveal;
+
+        // Lógica del Formulario de WhatsApp
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const message = document.getElementById('userMessage').value;
+            const phone = "59162028850"; // Tu número de WhatsApp
+
+            // Construir el mensaje codificado
+            const text = `Hola Denar, soy ${name} (${email}). Me gustaría consultarte lo siguiente: ${message}`;
+            const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+            
+            // Abrir WhatsApp
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
